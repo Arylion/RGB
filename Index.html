@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGB</title>
 </head>
@@ -15,9 +16,9 @@
     <!--Keeping Up With The Main Colors-->
     <div>
         <p id="TopColors">
-            <span id="Red" class="TopSpan">0 <span style="color: red;">Red</span></span>
-            <span id="Green" class="TopSpan">0 <span style="color: green;">Green</span></span>
-            <span id="Blue" class="TopSpan">0 <span style="color: blue;">Blue</span></span>
+            <span><span id="RedSpan" class="TopSpan">0</span> &nbsp; <span style="color: red;">Red</span></span> &nbsp;
+            <span><span id="GreenSpan" class="TopSpan">0</span> &nbsp; <span style="color: green;">Green</span></span> &nbsp;
+            <span><span id="BlueSpan" class="TopSpan">0</span> &nbsp; <span style="color: blue;">Blue</span></span> &nbsp;
         </p>
     </div>
 
@@ -35,24 +36,30 @@
                 <!--Red Upgrades Here-->
                 <div class="RedUpgrades">
                     <h2><span style="color: red;">Red Upgrades</span></h2>
-                    <button class="RedButton" id="1Red">Start Creating Red</button>
-                    <button class="RedButton" id="2Red">Start Creating Red</button>
+                    <button class="RedButton" id="1Red">Learn how to<br>create Red/s</button>
+                    <button class="RedButton" id="2Red" style="display:none;">Sacrifice 0.10 Red<br>for +0.01 Red/s</button>
+                    <button class="RedButton" id="3Red" style="display:none;">Sacrifice 1 Red<br>for +0.10 Red/s</button>
+                    <button class="RedButton" id="4Red" style="display:none;">Prepare 100 Red<br>for Mixing</button>
                 </div>
             </th>
-            <th class="MainUpgradesTh">
+            <th class="MainUpgradesTh" id="GreenTh" style="display:none;">
                 <!--Green Upgrades Here-->
                 <div class="GreenUpgrades">
                     <h2><span style="color: green;">Green Upgrades</span></h2>
-                    <button class="GreenButton" id="1Green">Start Creating Green</button>
-                    <button class="GreenButton" id="2Green">Start Creating Green</button>
+                    <button class="GreenButton" id="1Green">Learn how to/s<br>create Green/s</button>
+                    <button class="GreenButton" id="2Green" style="display:none;">Sacrifice 0.10 Green<br>for +0.01 Green/s</button>
+                    <button class="GreenButton" id="3Green" style="display:none;">Sacrifice 1 Green<br>for +0.10 Green/s</button>
+                    <button class="GreenButton" id="4Green" style="display:none;">Prepare 100 Green<br>for Mixing</button>
                 </div>
             </th>
-            <th class="MainUpgradesTh">
+            <th class="MainUpgradesTh" id="BlueTh" style="display:none;">
                 <!--Blue Upgrades Here-->
                 <div class="BlueUpgrades">
                     <h2><span style="color: blue;">Blue Upgrades</span></h2>
-                    <button class="BlueButton" id="1Blue">Start Creating Blue</button>
-                    <button class="BlueButton" id="2Blue">Start Creating Blue</button>
+                    <button class="BlueButton" id="1Blue">Learn how to<br>create Blue</button>
+                    <button class="BlueButton" id="2Blue" style="display:none;">Sacrifice 0.10 Blue<br>for +0.01 Blue/s</button>
+                    <button class="BlueButton" id="3Blue" style="display:none;">Sacrifice 1 Blue<br>for +0.10 Blue/s</button>
+                    <button class="BlueButton" id="4Blue" style="display:none;">Prepare 100 Blue<br>for Mixing</button>
                 </div>
             </th>
         </table>
@@ -60,6 +67,14 @@
 
     <!--Mixed Feelings About This One.-->
     <div id="Mixer" class="TabContent">
+        <div>
+            <h1><span style="color:red">Mixa</span><span style="color: green">ble C</span><span style="color:blue;">olors</span></h1>
+            <p id="TopMixColors">
+                <span><span id="MixRedSpan" class="MixSpan">0</span> &nbsp; <span style="color: red;">Red</span></span> &nbsp;
+                <span><span id="MixGreenSpan" class="MixSpan">0</span> &nbsp; <span style="color: green;">Green</span></span> &nbsp;
+                <span><span id="MixBlueSpan" class="MixSpan">0</span> &nbsp; <span style="color: blue;">Blue</span></span> &nbsp;
+            </p>
+        </div>
     </div>
 
     <!--Statistics. Interesting To Say The Least.-->
