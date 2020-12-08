@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB</title>
+</head>
+<body>
+    <!--Colorful Header. Yay.-->
+    <div>
+    <h1><span style="color:red">R</span><span style="color: green">G</span><span style="color:blue;">B</span></h1>
+    </div>
+
+    <!--Keeping Up With The Main Colors-->
+    <div>
+        <p id="TopColors">
+            <span id="Red" class="TopSpan">0 <span style="color: red;">Red</span></span>
+            <span id="Green" class="TopSpan">0 <span style="color: green;">Green</span></span>
+            <span id="Blue" class="TopSpan">0 <span style="color: blue;">Blue</span></span>
+        </p>
+    </div>
+
+    <!--Table of Navigation. Nice.-->
+    <div class="Tabs">
+        <button class="TabLinks" onclick="OpenTab(event,'Create')">Create</button>
+        <button class="TabLinks" onclick="OpenTab(event,'Mixer')">Mixer</button>
+        <button class="TabLinks" onclick="OpenTab(event,'Stats')">Stats</button>
+    </div>
+
+    <!--Getting Creative! -->
+    <div id="Create" class="TabContent">
+        <table id="MainUpgradesTable">
+            <th class="MainUpgradesTh">
+                <!--Red Upgrades Here-->
+                <div class="RedUpgrades">
+                    <h2><span style="color: red;">Red Upgrades</span></h2>
+                    <button class="RedButton" id="1Red">Start Creating Red</button>
+                    <button class="RedButton" id="2Red">Start Creating Red</button>
+                </div>
+            </th>
+            <th class="MainUpgradesTh">
+                <!--Green Upgrades Here-->
+                <div class="GreenUpgrades">
+                    <h2><span style="color: green;">Green Upgrades</span></h2>
+                    <button class="GreenButton" id="1Green">Start Creating Green</button>
+                    <button class="GreenButton" id="2Green">Start Creating Green</button>
+                </div>
+            </th>
+            <th class="MainUpgradesTh">
+                <!--Blue Upgrades Here-->
+                <div class="BlueUpgrades">
+                    <h2><span style="color: blue;">Blue Upgrades</span></h2>
+                    <button class="BlueButton" id="1Blue">Start Creating Blue</button>
+                    <button class="BlueButton" id="2Blue">Start Creating Blue</button>
+                </div>
+            </th>
+        </table>
+    </div>
+
+    <!--Mixed Feelings About This One.-->
+    <div id="Mixer" class="TabContent">
+    </div>
+
+    <!--Statistics. Interesting To Say The Least.-->
+    <div id="Stats" class="TabContent">
+    </div>
+
+
+    <script src="main.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>

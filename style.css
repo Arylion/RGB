@@ -1,0 +1,142 @@
+body {
+  background-color: black;
+  margin: auto;
+}
+
+/*Tophead*/
+h1 {
+  color: white;
+  text-align: center
+}
+
+/*Paragraphed*/
+p {
+  color: white;
+}
+
+/*TopColors*/
+#TopColors {
+  text-align: center;
+  margin: center;
+}
+
+.TopSpan {
+  padding: 10px 30px;
+}
+
+/*NavTabs*/
+.Tabs {
+  height: 50px;
+  overflow: hidden;
+  color: #f2f2f2;
+  user-select: none;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Nav Buttons */
+.Tabs button {
+  border: 1px;
+	border-color: #545454;
+	border-radius: 10px;
+	height: 50px;
+	width: 300px;
+	color: #f2f2f2;
+	background-color: #333;
+	user-select: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+}
+
+/* Some of that TabContent */
+.TabContent {
+  display: none;
+  padding: 6px 12px;
+}
+
+/* Create Tab */
+
+/*Table Stuffs*/
+#MainUpgradesTable {
+  height: 50px;
+  overflow: hidden;
+  color: #f2f2f2;
+  user-select: none;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.MainUpgradesTh {
+  border: 1px;
+	border-color: #545454;
+  font-size: large;
+  color: #f2f2f2;
+  overflow: hidden;
+  height: 500px;
+	width: 500px;
+  outline: none;
+	cursor: pointer;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+}
+
+/*Button Stuffz*/
+
+.RedButton {
+  border: 1px;
+	border-color: #545454;
+	border-radius: 10px;
+	height: 50px;
+  width: 200px;
+  font-size: large;
+	color: #f2f2f2;
+	background-color: red;
+	user-select: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.GreenButton {
+  border: 1px;
+	border-color: #545454;
+	border-radius: 10px;
+	height: 50px;
+  width: 200px;
+  font-size: large;
+	color: #f2f2f2;
+	background-color: green;
+	user-select: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.BlueButton {
+  border: 1px;
+	border-color: #545454;
+	border-radius: 10px;
+	height: 50px;
+  width: 200px;
+  font-size: large;
+	color: #f2f2f2;
+	background-color: blue;
+	user-select: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
