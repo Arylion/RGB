@@ -1,5 +1,9 @@
 //Variables Duh//
 var gameData = {
+    //Money//
+    Money: Money = 30,
+    //Knowledge//
+    Knowledge: Knowledge = 0,
     //Main Colors//
     Red: Red = 0,
     Green: Green = 0,
@@ -18,6 +22,8 @@ var gameData = {
 }
 
 var gameDataGen = {
+    //Knowledge//
+    KnowGen: KnowGen = 0,
     //Main Colors//
     RedGen: RedGen = 0,
     GreenGen: GreenGen = 0,
@@ -35,229 +41,217 @@ var gameDataGen = {
     RoseGen: RoseGen = 0,
 }
 
-var gameDataUpgrades = {
-  //Red//
-  RedB1: RedB1 = 0,
-  RedB2: RedB2 = 0,
-  RedB3: RedB3 = 0,
-
-  //Green//
-  GreenB1: GreenB1 = 0,
-  GreenB2: GreenB2 = 0,
-  GreenB3: GreenB3 = 0,
-
-  //Blue//
-  BlueB1: BlueB1 = 0,
-  BlueB2: BlueB2 = 0,
-  BlueB3: BlueB3 = 0,
-}
-
-var gameDataMixingSupplies = {
-  //Main Colors//
-  MixRed: MixRed = 0,
-  MixGreen: MixGreen = 0,
-  MixBlue: MixBlue = 0,
-}
-
 //Navigation Function//
 
-function OpenTab(evt, TabName) {
-    var i, TabContent, TabLinks;
-    TabContent = document.getElementsByClassName("TabContent");
-    for (i = 0; i < TabContent.length; i++) {
-      TabContent[i].style.display = "none";
-    }
-    TabLinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < TabLinks.length; i++) {
-      TabLinks[i].className = TabLinks[i].className.replace(" active", "");
-    }
-    document.getElementById(TabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-
-//Color Tabs Show//
-
-function ColorTabsShow(){
-  if (Red >= 1) {
-    $("#GreenTh").show();
-  }
-  if (Green >= 2) {
-    $("#BlueTh").show();
-  }
-}
-
-//Red Upgrade Buttons//
-//Numero Uno//
 $(document).ready(function(){
-  $("#1Red").click(function(){
-      RedGen = RedGen + 0.01;
-      $("#1Red").hide();
-      $("#2Red").show();
+  $("#StoreTab").click(function(){
+    $("#Conjure").hide();
+    $("#Mixer").hide();
+    $("#Stats").hide();
+    $("#Store").show();
   })
 })
-//Numero Dos//
 $(document).ready(function(){
-  $("#2Red").click(function(){
-    if (Red >= 0.10) {
-      Red = Red - 0.10;
-      RedGen = RedGen + 0.01;
-      RedB1 = RedB1 + 1;
-    }
+  $("#ConjureTab").click(function(){
+    $("#Store").hide();
+    $("#Mixer").hide();
+    $("#Stats").hide();
+    $("#Conjure").show();
   })
 })
-//Numero Tres//
 $(document).ready(function(){
-  $("#3Red").click(function(){
-    if (Red >= 1) {
-      Red = Red - 1;
-      RedGen = RedGen + 0.1;
-      RedB2 = RedB2 + 1;
-    }
+  $("#MixerTab").click(function(){
+    $("#Store").hide();
+    $("#Conjure").hide();
+    $("#Stats").hide();
+    $("#Mixer").show();
   })
 })
-//Numero Cuatro//
 $(document).ready(function(){
-  $("#4Red").click(function(){
-    if (Red >= 100) {
-      Red = Red - 100;
-      MixRed = MixRed + 100;
-      $("#4Red").hide();
-    }
+  $("#StatsTab").click(function(){
+    $("#Store").hide();
+    $("#Conjure").hide();
+    $("#Mixer").hide();
+    $("#Stats").show();
   })
 })
 
-//Red Upgrades Hide Show//
-function RedUpgradesHideShow() {
-  if (RedB1 >= 9) {
-    $("#2Red").hide();
-    $("#3Red").show();
-    $("#4Red").show();
-    RedB1 = RedB1 - 9;
-  }
-  if (RedB2 >= 9) {
-    $("#3Red").hide();
-    RedB2 = RedB2 - 9;
-  }
-}
+//StoreTab//
 
-//Green Upgrade Buttons//
-//Numero Uno//
+//StoreNav//
+
 $(document).ready(function(){
-  $("#1Green").click(function(){
-      GreenGen = GreenGen + 0.01;
-      $("#1Green").hide();
-      $("#2Green").show();
-    }
-  )
-})
-//Numero Dos//
-$(document).ready(function(){
-  $("#2Green").click(function(){
-    if (Green >= 0.10) {
-      Green = Green - 0.10;
-      GreenGen = GreenGen + 0.01;
-      GreenB1 = GreenB1 + 1;
-    }
+  $("#ConjuringStoreTab").click(function(){
+    $("#EquipmentStore").hide();
+    $("#ConjuringStore").show();
   })
 })
-//Numero Tres//
+
 $(document).ready(function(){
-  $("#3Green").click(function(){
-    if (Green >= 1) {
-      Green = Green - 1;
-      GreenGen = GreenGen + 0.1;
-      GreenB2 = GreenB2 + 1;
-    }
+  $("#EquipmentStoreTab").click(function(){
+    $("#ConjuringStore").hide();
+    $("#EquipmentStore").show();
   })
 })
-//Numero Cuatro//
+
+//Conjuring Books Buttons//
+
 $(document).ready(function(){
-  $("#4Green").click(function(){
-    if (Green >= 100) {
-      Green = Green - 100;
-      MixGreen = MixGreen + 100;
-      $("#4Green").hide();
+  $("#RedConjuringBook").click(function(){
+    if (Money >= 10) {
+      Money = Money - 10;
+      RedGen = RedGen + 0.001;
+      KnowGen = KnowGen + 0.05;
+      $("#RedConjuringBook").remove();
+      $("#ConjureTab").show();
+      $("#TopRed").show();
+      $("#TopColors").show();
+      $("#RedTh").show();
+      $("#RedConjuringTab").show();
     }
   })
 })
 
-
-//Green Upgrade Hide Show//
-function GreenUpgradesHideShow() {
-  if (GreenB1 >= 9) {
-    $("#2Green").hide();
-    $("#3Green").show();
-    $("#4Green").show();
-    GreenB1 = GreenB1 - 9;
-  }
-  if (GreenB2 >= 9) {
-    $("#3Green").hide();
-    GreenB2 = GreenB2 - 9;
-  }
-}
-
-//Blue Upgrade Buttons//
-//Numero Uno//
 $(document).ready(function(){
-  $("#1Blue").click(function(){
-      BlueGen = BlueGen + 0.01;
-      $("#1Blue").hide();
-      $("#2Blue").show();
-    }
-  )
-})
-//Numero Dos//
-$(document).ready(function(){
-  $("#2Blue").click(function(){
-    if (Blue >= 0.10) {
-      Blue = Blue - 0.10;
-      BlueGen = BlueGen + 0.01;
-      BlueB1 = BlueB1 + 1;
-    }
-  })
-})
-//Numero Tres//
-$(document).ready(function(){
-  $("#3Blue").click(function(){
-    if (Blue >= 1) {
-      Blue = Blue - 1;
-      BlueGen = BlueGen + 0.1;
-      BlueB2 = BlueB2 + 1;
-    }
-  })
-})
-//Numero Cuatro//
-$(document).ready(function(){
-  $("#4Blue").click(function(){
-    if (Blue >= 100) {
-      Blue = Blue - 100;
-      MixBlue = MixBlue + 100;
-      $("#4Blue").hide();
+  $("#GreenConjuringBook").click(function(){
+    if (Money >= 10) {
+      Money = Money - 10;
+      GreenGen = GreenGen + 0.001;
+      KnowGen = KnowGen + 0.05;
+      $("#GreenConjuringBook").remove();
+      $("#ConjureTab").show();
+      $("#TopGreen").show();
+      $("#TopColors").show();
+      $("#GreenTh").show();
+      $("#GreenConjuringTab").show();
     }
   })
 })
 
-//Blue Upgrade Hide Show//
-function BlueUpgradesHideShow() {
-  if (BlueB1 >= 9) {
-    $("#2Blue").hide();
-    $("#3Blue").show();
-    $("#4Blue").show();
-    BlueB1 = BlueB1 - 9;
-  }
-  if (BlueB2 >= 9) {
-    $("#3Blue").hide();
-    BlueB2 = BlueB2 - 9;
-  }
-}
+$(document).ready(function(){
+  $("#BlueConjuringBook").click(function(){
+    if (Money >= 10) {
+      Money = Money - 10;
+      BlueGen = BlueGen + 0.001;
+      KnowGen = KnowGen + 0.05;
+      $("#BlueConjuringBook").remove();
+      $("#ConjureTab").show();
+      $("#TopBlue").show();
+      $("#TopColors").show();
+      $("#BlueTh").show();
+      $("#BlueConjuringTab").show();
+    }
+  })
+})
 
+//Conjuring Tab//
+
+//Conjuring Nav//
+
+$(document).ready(function(){
+  $("#RedConjuringTab").click(function(){
+    $("#GreenConjuring").hide();
+    $("#BlueConjuring").hide();
+    $("#RedConjuring").show();
+  })
+})
+
+$(document).ready(function(){
+  $("#GreenConjuringTab").click(function(){
+    $("#RedConjuring").hide();
+    $("#BlueConjuring").hide();
+    $("#GreenConjuring").show();
+  })
+})
+
+$(document).ready(function(){
+  $("#BlueConjuringTab").click(function(){
+    $("#RedConjuring").hide();
+    $("#GreenConjuring").hide();
+    $("#BlueConjuring").show();
+  })
+})
+
+//Red Conjuring Tab//
+
+//Red Selling Point//
+
+$(document).ready(function(){
+  $("#RedSellingButton1").click(function(){
+    if (Red >= 0.095) {
+      Red = Red - 0.095;
+      Money = Money + 1;
+    }
+  })
+})
+
+//Red Study//
+
+$(document).ready(function(){
+  $("#RedStudy1").click(function(){
+    if (Knowledge >= 10) {
+      Knowledge = Knowledge - 10;
+      RedGen = RedGen + 0.001;
+    }
+  })
+})
+
+//Green Conjuring Tab//
+
+//Green Selling Point//
+
+$(document).ready(function(){
+  $("#GreenSellingButton1").click(function(){
+    if (Green >= 0.095) {
+      Green = Green - 0.095;
+      Money = Money + 1;
+    }
+  })
+})
+
+//Green Study//
+
+$(document).ready(function(){
+  $("#GreenStudy1").click(function(){
+    if (Knowledge >= 10) {
+      Knowledge = Knowledge - 10;
+      GreenGen = GreenGen + 0.001;
+    }
+  })
+})
+
+//Blue Conjuring Tab//
+
+//Blue Selling Point//
+
+$(document).ready(function(){
+  $("#BlueSellingButton1").click(function(){
+    if (Blue >= 0.095) {
+      Blue = Blue - 0.095;
+      Money = Money + 1;
+    }
+  })
+})
+
+//Blue Study//
+
+$(document).ready(function(){
+  $("#BlueStudy1").click(function(){
+    if (Knowledge >= 10) {
+      Knowledge = Knowledge - 10;
+      BlueGen = BlueGen + 0.001;
+    }
+  })
+})
 
 //Function ToFixed. Need them Decimals//
 
 function ToFixed() {
+  KnowSpan = Knowledge.toFixed(1);
   RedSpan = Red.toFixed(2);
   GreenSpan = Green.toFixed(2);
   BlueSpan = Blue.toFixed(2);
+  document.getElementById("KnowSpan").innerHTML = KnowSpan;
   document.getElementById("RedSpan").innerHTML = RedSpan;
   document.getElementById("GreenSpan").innerHTML = GreenSpan;
   document.getElementById("BlueSpan").innerHTML = BlueSpan;
@@ -269,27 +263,24 @@ function MainGen(){
   Red = Red + RedGen;
   Green = Green + GreenGen;
   Blue = Blue + BlueGen;
+  Knowledge = Knowledge + KnowGen;
   document.getElementById("Red").innerHTML = Red;
   document.getElementById("Green").innerHTML = Green;
   document.getElementById("Blue").innerHTML = Blue;
+  document.getElementById("Knowledge").innerHTML = Knowledge;
 }
 
 function Display(){
+MoneySpan = Money;
+KnowSpan = Knowledge;
 RedSpan = Red;
 GreenSpan = Green;
 BlueSpan = Blue;
+document.getElementById("MoneySpan").innerHTML = MoneySpan;
+document.getElementById("KnowSpan").innerHTML = KnowSpan;
 document.getElementById("RedSpan").innerHTML = RedSpan;
 document.getElementById("GreenSpan").innerHTML = GreenSpan;
 document.getElementById("BlueSpan").innerHTML = BlueSpan;
-}
-
-function DisplayMix(){
-  MixRedSpan = MixRed;
-  MixGreenSpan = MixGreen;
-  MixBlueSpan = MixBlue;
-  document.getElementById("MixRedSpan").innerHTML = MixRedSpan;
-  document.getElementById("MixGreenSpan").innerHTML = MixGreenSpan;
-  document.getElementById("MixBlueSpan").innerHTML = MixBlueSpan;
 }
 
 //Time Set//
@@ -300,10 +291,5 @@ window.setInterval(function(){
 
 window.setInterval(function(){
   Display();
-  DisplayMix();
-  ColorTabsShow();
   ToFixed();
-  RedUpgradesHideShow();
-  GreenUpgradesHideShow();
-  BlueUpgradesHideShow();
 }, 10);

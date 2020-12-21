@@ -3,16 +3,32 @@ body {
   margin: auto;
 }
 
-/*Tophead*/
+/*Headers*/
 h1 {
   color: white;
   text-align: center
 }
 
+h2 {
+	color: white;
+	text-align: center
+  }
+
+h3 {
+	color: white;
+	text-align: center
+  }
+
 /*Paragraphed*/
 p {
   color: white;
 }
+
+/*Money*/
+#TopMoney {
+	text-align: center;
+	margin: center;
+  }
 
 /*TopColors*/
 #TopColors {
@@ -53,45 +69,82 @@ p {
 .TabContent {
   display: none;
   padding: 6px 12px;
+  text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-/* Create Tab */
+/* Store Tab */
 
 /*Table Stuffs*/
-#MainUpgradesTable {
-  height: 50px;
-  overflow: hidden;
-  color: #f2f2f2;
-  user-select: none;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.MainUpgradesTh {
-	border: 1px;
-	border-color: #545454;
-	font-size: large;
+#Store {
 	color: #f2f2f2;
 	overflow: hidden;
-	height: 500px;
-	width: 500px;
-	outline: none;
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
-	display: inline-block;
+  }
+
+.StoreSupply {
+	overflow: hidden;
+	color: #f2f2f2;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+  }
+
+
+/* Conjure Tab */
+
+.ConjureTable {
+	overflow: hidden;
+	color: #f2f2f2;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.SellingPoint {
+	overflow: hidden;
+	color: #f2f2f2;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+  }
+
+.ConjuralStudy {
+	overflow: hidden;
+	color: #f2f2f2;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /*Button Stuffz*/
+
+.SellingButton {
+	  border: 1px;
+	  height: 20px;
+	  width: 150px;
+	  color: #f2f2f2;
+	  background-color: rgb(73, 72, 72);
+	  user-select: none;
+	  outline: none;
+	  cursor: pointer;
+	  text-align: center;
+	  margin-right: auto;
+	  margin-left: auto;
+	  display: inline-block;
+  }
 
 .RedButton {
 	border: 1px;
 	border-color: #545454;
 	border-radius: 10px;
-	height: 50px;
-	width: 200px;
-	font-size: large;
+	height: 60px;
+	width: 220px;
+	font-size: medium;
 	color: #f2f2f2;
 	background-color: red;
 	user-select: none;
@@ -106,9 +159,9 @@ p {
 	border: 1px;
 	border-color: #545454;
 	border-radius: 10px;
-	height: 50px;
-	width: 200px;
-	font-size: large;
+	height: 60px;
+	width: 220px;
+	font-size: medium;
 	color: #f2f2f2;
 	background-color: green;
 	user-select: none;
@@ -123,9 +176,9 @@ p {
 	border: 1px;
 	border-color: #545454;
 	border-radius: 10px;
-	height: 50px;
- 	width: 200px;
- 	font-size: large;
+	height: 60px;
+	width: 220px;
+ 	font-size: medium;
 	color: #f2f2f2;
 	background-color: blue;
 	user-select: none;
@@ -134,11 +187,4 @@ p {
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
-}
-
-/*TopMixColors*/
-
-#TopMixColors {
-	text-align: center;
-	margin: center;
 }
