@@ -8,15 +8,9 @@
     <title>RGB</title>
 </head>
 <body>
-
-    <!--Colorful Header. Yay.-->
-
     <div>
     <h1><span style="color:red">R</span><span style="color: green">G</span><span style="color:blue;">B</span></h1>
     </div>
-
-    <!--Keeping Up With The Main Variables-->
-
     <div>
         <p id="TopMoney">
             <span>$<span id="MoneySpan" class="TopSpan">10</span></span> <br> <span><span id="KnowSpan">0</span> Knowledge</span>
@@ -27,135 +21,62 @@
             <span id="TopBlue" style="display:none"><span id="BlueSpan" class="TopSpan">0</span> &nbsp; <span style="color: blue;">Blue</span></span> &nbsp;
         </p>
     </div>
-
-    <!--Table of Navigation. Nice.-->
-
     <div class="Tabs">
         <button class="TabLinks" id="StoreTab">Stores</button>
         <button class="TabLinks" id="ConjureTab" style="display:none;">Conjure</button>
+        <button class="Tablinks" id="LabTab" style="display:none;">Lab</button>
         <button class="TabLinks" id="MixerTab" style="display:none;">Mixer</button>
         <button class="TabLinks" id="StatsTab" style="display:none;"> Stats</button>
     </div>
     <br>
-
-    <!--The Store. Ya know, where you like buy stuff-->
-
     <div id="Store" class="TabContent">
-
-        <!--Store Tabs-->
-
-        <div class="Tabs">
-            <button class="TabLinks" id="ConjuringStoreTab">Conjuring Store</button>
-            <button class="TabLinks" id="EquipmentStoreTab" style="display:none;">Equipment Store</button>
-        </div>
-        <br>
-
-        <!--Magic Store!-->
-
-        <div id="ConjuringStore" class="StoreSupply" style="display:none;">
-            <h2><span style="color:red">Conj</span><span style="color: green">uring</span><span style="color:blue;"> Store</span></h2>
-            <button class="RedButton" id="RedConjuringBook">Beginners Book on Conjuring Red<br>$10</button>
-            <button class="GreenButton" id="GreenConjuringBook">Beginners Book on Conjuring Green<br>$10</button>
-            <button class="BlueButton" id="BlueConjuringBook">Beginners Book on Conjuring Blue<br>$10</button>
-        </div>
-        <div id="EquipmentStore" class="StoreSupply" style="display:none;">
-            <h2><span style="color: red">Equi</span><span style="color: green">pment</span><span style="color: blue;"> Store</span></h2>
+        <div id="Stores">
+            <div id="ConjuringStoreTab" class="StoreTabs">
+                <h2><span style="color:red">Conj</span><span style="color: green">uring</span><span style="color:blue;"> Store</span></h2>
+                <button class="RedButton" id="RedConjuringBook">Beginners Book <br>on Conjuring Red<br>$10</button>
+                <button class="GreenButton" id="GreenConjuringBook">Beginners Book<br>on Conjuring Green<br>$10</button>
+                <button class="BlueButton" id="BlueConjuringBook">Beginners Book<br>on Conjuring Blue<br>$10</button>
+            </div>
+            <div id="EquipmentStoreTab" class="StoreTabs" style="display:none;">
+                <h2><span style="color:red">Equi</span><span style="color: green">pment</span><span style="color:blue;"> Store</span></h2>
+                <button class="RedButton" id="TraderBag1">A Bigger bag to<br>sell more at once<br>$25</button>
+                <button class="GreenButton" id="LabEquipment">Buy Lab Equipment<br>For Experimentation<br>$100</button>
+            </div>
         </div>
     </div>
-
-    <!--Conjuring Stuff with your MIND!-->
-
     <div id="Conjure" class="TabContent">
-
-        <!--Conjuring Tabs-->
-
-        <div class="Tabs">
-            <button class="TabLinks" id="RedConjuringTab" style="display:none;">Red Conjuring Skill</button>
-            <button class="Tablinks" id="GreenConjuringTab" style="display:none;">Green Conjuring Skill</button>
-            <button class="TabLinks" id="BlueConjuringTab" style="display:none;">Blue Conjuring Skill</button>
-        </div>
-        <br>
-
-        <!--Red Conjuring Tab-->
-
-        <div id="RedConjuring" class="ConjuringSkill" style="display:none;">
-
-            <!--Red Selling-->
-
-            <div class="SellingPoint">
-                <button class="SellingButton" id="RedSellingButton1">Sell 0.10 Red</button>
-                <button class="SellingButton" id="RedSellingButton2" style="display:none;">Sell 1 Red</button>
+        <div id="ConjureTabs">
+            <div class="ConjureColors">
+                <h2><span style="color:red">Red</span></h2>
+                    <button class="SellingButton" id="RedSellingButton1">Sell 0.10 Red</button>
+                    <button class="SellingButton" id="RedSellingButton2" style="display:none;">Sell 1 Red</button>
+                    <h2 style="color: red;">Red Study</h2>
+                    <button class="RedButton" id="RedStudy1">Improve Red Conjuring<br>Use 10 Knowledge<br><span id="Redup1">0</span>/10</button>
             </div>
-            <br>
-
-            <!--Red Study-->
-
-            <div class="ConjuralStudy" id="RedStudy">
-                <h2 style="color: red;">Red Study</h2>
-                <div class="StudyButtons" id="RedStudy">
-                    <button class="RedButton" id="RedStudy1">Improve Red Conjuring<br>Use 10 Knowledge</button>
-                </div>
+            <div class="ConjureColors">
+                <h2><span style="color: green">Green</span></h2>
+                    <button class="SellingButton" id="GreenSellingButton1">Sell 0.10 Green</button>
+                    <button class="SellingButton" id="GreenSellingButton2" style="display:none;">Sell 1 Green</button>
+                    <h2 style="color: green;">Green Study</h2>
+                    <button class="GreenButton" id="GreenStudy1">Improve Green Conjuring<br>Use 10 Knowledge<br><span id="Greenup1">0</span>/10</button>
             </div>
-        </div>
-
-        <!--Green Conjuring Tab-->
-
-        <div id="GreenConjuring" class="ConjuringSkill" style="display:none;">
-
-            <!--Green Selling-->
-
-            <div class="SellingPoint">
-                <button class="SellingButton" id="GreenSellingButton1">Sell 0.10 Green</button>
-                <button class="SellingButton" id="GreenSellingButton2" style="display:none;">Sell 1 Green</button>
-            </div>
-            <br>
-
-            <!--Green Study-->
-
-            <div class="ConjuralStudy" id="GreemStudy">
-                <h2 style="color: green;">Green Study</h2>
-                <div class="StudyButtons" id="GreenStudy">
-                    <button class="GreenButton" id="GreenStudy1">Improve Green Conjuring<br>Use 10 Knowledge</button>
-                </div>
-            </div>
-        </div>
-
-        <!--Blue Conjuring Tab-->
-
-        <div id="BlueConjuring" class="ConjuringSkill" style="display:none;">
-
-            <!--Blue Selling-->
-
-            <div class="SellingPoint">
-                <button class="SellingButton" id="BlueSellingButton1">Sell 0.10 Blue</button>
-                <button class="SellingButton" id="BlueSellingButton2" style="display:none;">Sell 1 Blue</button>
-            </div>
-            <br>
-
-            <!--Blue Study-->
-
-            <div class="ConjuralStudy" id="BlueStudy">
-                <h2 style="color: blue;">Blue Study</h2>
-                <div class="StudyButtons" id="BlueStudy">
-                    <button class="BlueButton" id="BlueStudy1">Improve Blue Conjuring<br>Use 10 Knowledge</button>
-                </div>
+            <div class="ConjureColors">
+                <h2><span style="color:blue;">Blue</span></h2>
+                    <button class="SellingButton" id="BlueSellingButton1">Sell 0.10 Blue</button>
+                    <button class="SellingButton" id="BlueSellingButton2" style="display:none;">Sell 1 Blue</button>
+                    <h2 style="color: blue;">Blue Study</h2>
+                    <button class="BlueButton" id="BlueStudy1">Improve Blue Conjuring<br>Use 10 Knowledge<br><span id="Blueup1">0</span>/10</button>
             </div>
         </div>
     </div>
-
-    <!--Mixed Feelings About This One.-->
-
-    <div id="Mixer" class="TabContent">
+    <div id="Lab" class="TabContent">
         <div>
+
         </div>
     </div>
-
-    <!--Statistics. Interesting To Say The Least.-->
-
     <div id="Stats" class="TabContent">
+
     </div>
-
-
     <script src="main.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 //Variables Duh//
 var gameData = {
     //Money//
-    Money: Money = 30,
+    Money: Money = 1000,
     //Knowledge//
-    Knowledge: Knowledge = 0,
+    Knowledge: Knowledge = 1000,
     //Main Colors//
     Red: Red = 0,
     Green: Green = 0,
@@ -41,12 +41,27 @@ var gameDataGen = {
     RoseGen: RoseGen = 0,
 }
 
+var gameDataUpgrade = {
+  //Red//
+  Redup1: Redup1 = 0,
+  Redup2: Redup2 = 0,
+  Redup3: Redup3 = 0,
+  //Green//
+  Greenup1: Greenup1 = 0,
+  Greenup2: Greenup2 = 0,
+  Greenup3: Greenup3 = 0,
+  //Blue//
+  Blueup1: Blueup1 = 0,
+  Blueup2: Blueup2 = 0,
+  Blueup3: Blueup3 = 0,
+}
+
 //Navigation Function//
 
 $(document).ready(function(){
   $("#StoreTab").click(function(){
     $("#Conjure").hide();
-    $("#Mixer").hide();
+    $("#Lab").hide();
     $("#Stats").hide();
     $("#Store").show();
   })
@@ -54,47 +69,31 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#ConjureTab").click(function(){
     $("#Store").hide();
-    $("#Mixer").hide();
+    $("#Lab").hide();
     $("#Stats").hide();
     $("#Conjure").show();
   })
 })
 $(document).ready(function(){
-  $("#MixerTab").click(function(){
+  $("#LabTab").click(function(){
     $("#Store").hide();
     $("#Conjure").hide();
     $("#Stats").hide();
-    $("#Mixer").show();
+    $("#Lab").show();
   })
 })
 $(document).ready(function(){
   $("#StatsTab").click(function(){
     $("#Store").hide();
     $("#Conjure").hide();
-    $("#Mixer").hide();
+    $("#Lab").hide();
     $("#Stats").show();
   })
 })
 
 //StoreTab//
 
-//StoreNav//
-
-$(document).ready(function(){
-  $("#ConjuringStoreTab").click(function(){
-    $("#EquipmentStore").hide();
-    $("#ConjuringStore").show();
-  })
-})
-
-$(document).ready(function(){
-  $("#EquipmentStoreTab").click(function(){
-    $("#ConjuringStore").hide();
-    $("#EquipmentStore").show();
-  })
-})
-
-//Conjuring Books Buttons//
+//Conjuring Store Buttons//
 
 $(document).ready(function(){
   $("#RedConjuringBook").click(function(){
@@ -106,8 +105,7 @@ $(document).ready(function(){
       $("#ConjureTab").show();
       $("#TopRed").show();
       $("#TopColors").show();
-      $("#RedTh").show();
-      $("#RedConjuringTab").show();
+      $(".RedConjureTable").show();
     }
   })
 })
@@ -122,8 +120,7 @@ $(document).ready(function(){
       $("#ConjureTab").show();
       $("#TopGreen").show();
       $("#TopColors").show();
-      $("#GreenTh").show();
-      $("#GreenConjuringTab").show();
+      $(".GreenConjureTable").show();
     }
   })
 })
@@ -138,43 +135,44 @@ $(document).ready(function(){
       $("#ConjureTab").show();
       $("#TopBlue").show();
       $("#TopColors").show();
-      $("#BlueTh").show();
-      $("#BlueConjuringTab").show();
+      $(".BlueConjureTable").show();
     }
   })
 })
 
+//Euipment Store Tab//
+
+function EquipmentTabShow() {
+  if (Redup1 || Greenup1 || Blueup1 >= 5) {
+    $("#EquipmentStoreTab").show();
+  }
+}
+
+$(document).ready(function(){
+  $("#TraderBag1").click(function(){
+    if (Money >= 25) {
+      Money = Money - 25;
+      $("#TraderBag1").remove();
+      $("#RedSellingButton2").show();
+      $("#GreenSellingButton2").show();
+      $("#BlueSellingButton2").show();
+    }
+  })
+})
+
+$(document).ready(function(){
+  $("#LabEquipment").click(function(){
+    if (Money >= 100) {
+      Money = Money - 100;
+      $("#LabEquipment").remove();
+      $("#LabTab").show();
+    }
+  })
+})
+
+
 //Conjuring Tab//
-
-//Conjuring Nav//
-
-$(document).ready(function(){
-  $("#RedConjuringTab").click(function(){
-    $("#GreenConjuring").hide();
-    $("#BlueConjuring").hide();
-    $("#RedConjuring").show();
-  })
-})
-
-$(document).ready(function(){
-  $("#GreenConjuringTab").click(function(){
-    $("#RedConjuring").hide();
-    $("#BlueConjuring").hide();
-    $("#GreenConjuring").show();
-  })
-})
-
-$(document).ready(function(){
-  $("#BlueConjuringTab").click(function(){
-    $("#RedConjuring").hide();
-    $("#GreenConjuring").hide();
-    $("#BlueConjuring").show();
-  })
-})
-
-//Red Conjuring Tab//
-
-//Red Selling Point//
+//Selling Point//
 
 $(document).ready(function(){
   $("#RedSellingButton1").click(function(){
@@ -184,22 +182,14 @@ $(document).ready(function(){
     }
   })
 })
-
-//Red Study//
-
 $(document).ready(function(){
-  $("#RedStudy1").click(function(){
-    if (Knowledge >= 10) {
-      Knowledge = Knowledge - 10;
-      RedGen = RedGen + 0.001;
+  $("#RedSellingButton2").click(function(){
+    if (Red >= 1) {
+      Red = Red - 1;
+      Money = Money + 10;
     }
   })
 })
-
-//Green Conjuring Tab//
-
-//Green Selling Point//
-
 $(document).ready(function(){
   $("#GreenSellingButton1").click(function(){
     if (Green >= 0.095) {
@@ -208,22 +198,14 @@ $(document).ready(function(){
     }
   })
 })
-
-//Green Study//
-
 $(document).ready(function(){
-  $("#GreenStudy1").click(function(){
-    if (Knowledge >= 10) {
-      Knowledge = Knowledge - 10;
-      GreenGen = GreenGen + 0.001;
+  $("#GreenSellingButton2").click(function(){
+    if (Green >= 1) {
+      Green = Green - 1;
+      Money = Money + 10;
     }
   })
 })
-
-//Blue Conjuring Tab//
-
-//Blue Selling Point//
-
 $(document).ready(function(){
   $("#BlueSellingButton1").click(function(){
     if (Blue >= 0.095) {
@@ -232,14 +214,43 @@ $(document).ready(function(){
     }
   })
 })
+$(document).ready(function(){
+  $("#BlueSellingButton2").click(function(){
+    if (Blue >= 1) {
+      Blue = Blue - 1;
+      Money = Money + 10;
+    }
+  })
+})
 
-//Blue Study//
+// Study//
+
+$(document).ready(function(){
+  $("#RedStudy1").click(function(){
+    if (Knowledge >= 10) {
+      Knowledge = Knowledge - 10;
+      RedGen = RedGen + 0.001;
+      Redup1 = Redup1 + 1;
+    }
+  })
+})
+
+$(document).ready(function(){
+  $("#GreenStudy1").click(function(){
+    if (Knowledge >= 10) {
+      Knowledge = Knowledge - 10;
+      GreenGen = GreenGen + 0.001;
+      Greenup1 = Greenup1 + 1;
+    }
+  })
+})
 
 $(document).ready(function(){
   $("#BlueStudy1").click(function(){
     if (Knowledge >= 10) {
       Knowledge = Knowledge - 10;
       BlueGen = BlueGen + 0.001;
+      Blueup1 = Blueup1 + 1;
     }
   })
 })
@@ -264,10 +275,6 @@ function MainGen(){
   Green = Green + GreenGen;
   Blue = Blue + BlueGen;
   Knowledge = Knowledge + KnowGen;
-  document.getElementById("Red").innerHTML = Red;
-  document.getElementById("Green").innerHTML = Green;
-  document.getElementById("Blue").innerHTML = Blue;
-  document.getElementById("Knowledge").innerHTML = Knowledge;
 }
 
 function Display(){
@@ -283,13 +290,30 @@ document.getElementById("GreenSpan").innerHTML = GreenSpan;
 document.getElementById("BlueSpan").innerHTML = BlueSpan;
 }
 
+function DisplayUp(){
+  Redup1 = Redup1;
+  Redup2 = Redup2;
+  Redup3 = Redup3;
+  Greenup1 = Greenup1;
+  Greenup2 = Greenup2;
+  Greenup3 = Greenup3;
+  Blueup1 = Blueup1;
+  Blueup2 = Blueup2;
+  Blueup3 = Blueup3;
+  document.getElementById("Redup1").innerHTML = Redup1;
+  document.getElementById("Greenup1").innerHTML = Greenup1;
+  document.getElementById("Blueup1").innerHTML = Blueup1;
+}
+
 //Time Set//
+
+window.setInterval(function(){
+  Display();
+  DisplayUp();
+  ToFixed();
+  EquipmentTabShow();
+}, 10);
 
 window.setInterval(function(){
   MainGen();
 }, 100);
-
-window.setInterval(function(){
-  Display();
-  ToFixed();
-}, 10);
