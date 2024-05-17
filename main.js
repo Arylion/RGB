@@ -1,4 +1,12 @@
 //Variables Duh//
+
+var gameElements = {
+  Conjure : $("#Conjure"),
+  Store : $("#Store"),
+  Lab : $("#Lab"),
+  Stats : $("#Stats"),
+};
+
 var gameData = {
     //Money//
     Money: Money = 1000,
@@ -60,36 +68,33 @@ var gameDataUpgrade = {
 
 $(document).ready(function(){
   $("#StoreTab").click(function(){
-    $("#Conjure").hide();
-    $("#Lab").hide();
-    $("#Stats").hide();
-    $("#Store").show();
-  })
-})
-$(document).ready(function(){
+    gameElements.Conjure.hide();
+    gameElements.Lab.hide();
+    gameElements.Stats.hide();
+    gameElements.Store.show();
+  });
+
   $("#ConjureTab").click(function(){
-    $("#Store").hide();
-    $("#Lab").hide();
-    $("#Stats").hide();
-    $("#Conjure").show();
-  })
-})
-$(document).ready(function(){
+    gameElements.Store.hide();
+    gameElements.Lab.hide();
+    gameElements.Stats.hide();
+    gameElements.Conjure.show();
+  });
+
   $("#LabTab").click(function(){
-    $("#Store").hide();
-    $("#Conjure").hide();
-    $("#Stats").hide();
-    $("#Lab").show();
-  })
-})
-$(document).ready(function(){
+    gameElements.Store.hide();
+    gameElements.Conjure.hide();
+    gameElements.Stats.hide();
+    gameElements.Lab.show();
+  });
+
   $("#StatsTab").click(function(){
-    $("#Store").hide();
-    $("#Conjure").hide();
-    $("#Lab").hide();
-    $("#Stats").show();
-  })
-})
+    gameElements.Store.hide();
+    gameElements.Conjure.hide();
+    gameElements.Lab.hide();
+    gameElements.Stats.show();
+  });
+});
 
 //StoreTab//
 
@@ -140,7 +145,7 @@ $(document).ready(function(){
   })
 })
 
-//Euipment Store Tab//
+//Equipment Store Tab//
 
 function EquipmentTabShow() {
   if (Redup1 || Greenup1 || Blueup1 >= 5) {
@@ -225,32 +230,39 @@ $(document).ready(function(){
 
 // Study//
 
+
 $(document).ready(function(){
   $("#RedStudy1").click(function(){
-    if (Knowledge >= 10) {
+    if (Redup1 < 10) {
+      if (Knowledge >= 10) {
       Knowledge = Knowledge - 10;
       RedGen = RedGen + 0.001;
       Redup1 = Redup1 + 1;
+      }
     }
   })
 })
 
 $(document).ready(function(){
   $("#GreenStudy1").click(function(){
-    if (Knowledge >= 10) {
+    if (Greenup1 < 10) {
+      if (Knowledge >= 10) {
       Knowledge = Knowledge - 10;
       GreenGen = GreenGen + 0.001;
       Greenup1 = Greenup1 + 1;
+      }
     }
   })
 })
 
 $(document).ready(function(){
   $("#BlueStudy1").click(function(){
-    if (Knowledge >= 10) {
+    if (Blueup1 < 10) {
+      if (Knowledge >= 10) {
       Knowledge = Knowledge - 10;
       BlueGen = BlueGen + 0.001;
       Blueup1 = Blueup1 + 1;
+      }
     }
   })
 })
@@ -288,7 +300,7 @@ document.getElementById("KnowSpan").innerHTML = KnowSpan;
 document.getElementById("RedSpan").innerHTML = RedSpan;
 document.getElementById("GreenSpan").innerHTML = GreenSpan;
 document.getElementById("BlueSpan").innerHTML = BlueSpan;
-}
+};
 
 function DisplayUp(){
   Redup1 = Redup1;
@@ -303,10 +315,17 @@ function DisplayUp(){
   document.getElementById("Redup1").innerHTML = Redup1;
   document.getElementById("Greenup1").innerHTML = Greenup1;
   document.getElementById("Blueup1").innerHTML = Blueup1;
-}
+};
+
+//Load Local Storage//
+localStorage.getItem('gameData')
+localStorage.getItem('gameDataGen')
+localStorage.getItem('gameDataUpgrade')
+
+
 
 //Time Set//
-
+//'gameDataGen','gameDataUpgrade',//gameDataGen,gameDataUpgrade//
 window.setInterval(function(){
   Display();
   DisplayUp();
@@ -317,3 +336,9 @@ window.setInterval(function(){
 window.setInterval(function(){
   MainGen();
 }, 100);
+
+window.setInterval(function(){
+  localStorage.setItem("gameData",JSON.stringify(gameData));
+  localStorage.setItem("gameDataGen",JSON.stringify(gameDataGen));
+  localStorage.setItem("gameDataUpgrade",JSON.stringify(gameDataUpgrade));
+}, 20000)
